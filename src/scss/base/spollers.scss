@@ -1,0 +1,142 @@
+// Базовые стили спойлеров
+// Сниппет (HTML): spoller
+
+// Блок со спойлерами
+.spollers {
+	display: grid;
+	gap: 10px;
+
+	@media (max-width:$mobileMiddle) {
+		gap: 9px;
+	}
+}
+
+// Спойлер
+.spollers__item {
+	border-radius: 20px;
+	background: linear-gradient(180deg, #0E1A30 0%, #000 100%);
+}
+
+// Заголовок спойлера
+.spollers__title {
+	width: 100%;
+	cursor: default;
+	text-align: left;
+	padding: rem(25) rem(70) rem(20) rem(40);
+	position: relative;
+	list-style: none;
+	font-size: 25px;
+	font-weight: 300;
+	line-height: normal;
+
+	@media (max-width:$tablet) {
+		font-size: 16px;
+		padding: rem(20) rem(70) rem(20) rem(30);
+	}
+
+	@media (max-width:$mobileMiddle) {
+		padding: rem(20);
+		padding-right: rem(60);
+	}
+
+	&::marker {}
+
+	._spoller-init & {
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 40px;
+			top: 50%;
+			background: var(--color-main);
+			height: 5px;
+			width: 30px;
+			transition: transform 0.5s ease 0s;
+
+			@media (max-width:$tablet) {
+				width: 19px;
+				height: 3px;
+				right: 30px;
+			}
+
+			@media (max-width:$mobileMiddle) {
+				right: 20px;
+			}
+		}
+
+		&::before {
+			transform: rotate(90deg);
+		}
+
+		&::after {
+			// transform: translate(0, -50%) rotate(-40deg);
+		}
+
+		&._spoller-active {
+			&::before {
+				transform: rotate(0deg);
+			}
+
+			&::after {
+				// transform: rotate(40deg);
+			}
+		}
+
+		/*
+		._spoller-init & {
+			position: relative;
+			width: 100%;
+			text-align: left;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: rem(12);
+				height: rem(1);
+				transition: all 0.3s ease 0s;
+				width: rem(10);
+				background-color: #000;
+			}
+			&::before {
+				transform: rotate(40deg);
+				right: rem(7);
+			}
+			&::after {
+				transform: rotate(-40deg);
+			}
+		}
+		&._spoller-active {
+			&::before {
+				transform: rotate(-40deg);
+			}
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+		*/
+	}
+}
+
+// Контент спойлера
+.spollers__body {
+	padding: rem(40);
+	padding-top: rem(20);
+	font-size: 20px;
+	font-weight: 300;
+	line-height: normal;
+
+	@media (max-width:$tablet) {
+		font-size: 16px;
+		padding: rem(30);
+		padding-top: 0;
+	}
+
+	@media (max-width:$mobileMiddle) {
+		padding: rem(20);
+		padding-top: 0;
+		line-height: 18.8px;
+	}
+}

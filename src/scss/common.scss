@@ -1,0 +1,38 @@
+// Заголовки, общие БЄМ блоки и проче...
+.btn {
+   font-size: 20px;
+   font-weight: 500;
+   line-height: normal;
+   display: inline-block;
+   border-radius: 10px;
+   border: 2px solid;
+   height: 50px;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   transition: all 0.3s;
+   padding: 0 rem(15);
+
+   // .btn_blue
+
+   &_blue {
+      color: var(--color-main);
+      border-color: var(--color-main);
+
+      &:hover {
+         background: var(--color-main);
+         color: var(--bg-main);
+      }
+   }
+}
+
+.title {
+   font-size: 50px;
+   font-weight: 500;
+   line-height: 50px;
+
+   @media (max-width:$tablet) {
+      font-size: 30px;
+      line-height: normal;
+   }
+}

@@ -2263,6 +2263,14 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (min-width: 69.06125em) {
+  .packs__slider_center .packs__wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 @media (min-width: 81.25em) {
   .features__bottom .features__title {
     font-size: 3.125rem;
@@ -3052,6 +3060,10 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 47.99875em) and (max-width: 61.99875em) {
+  .first-block__container {
+    margin: 0;
+  }
+
   .first-block__container::before {
     width: 817px;
     height: 830px;

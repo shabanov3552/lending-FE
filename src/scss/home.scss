@@ -30,6 +30,9 @@
       }
 
       @media (min-width:$mobile) {
+         @media (max-width:$tablet) {
+            margin: 0;
+         }
 
          &::before {
             pointer-events: none;
@@ -885,6 +888,13 @@
       padding-top: rem(31);
       position: relative;
 
+      &_center {
+         .packs__wrapper {
+            @media (min-width:em(1104.98)) {
+               justify-content: center;
+            }
+         }
+      }
 
       @media (max-width:em(1104.98)) {
 

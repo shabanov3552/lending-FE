@@ -100,6 +100,9 @@ function initSliders() {
 			// События
 			on: {
 				init: function (q) {
+					if (this.slides.length <= 2) {
+						this.el.classList.add('packs__slider_center')
+					}
 					this.slides.forEach((e, i) => {
 						if (e.querySelector('.packs__card_main')) {
 							this.slideTo(i)
